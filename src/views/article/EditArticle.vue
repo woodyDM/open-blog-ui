@@ -77,10 +77,8 @@ export default {
             const nowId = this.currentId;
 
             if(nowId!==-1){
-                console.log("should load article id = "+nowId)
-                this.loadExistArticle(nowId);
+                 this.loadExistArticle(nowId);
             }else{
-                console.log("id=-1 new article.")
                 this.form.title = '';
                 this.form.subtract = '';
                 this.editorContent = '';
@@ -116,11 +114,11 @@ export default {
             rules:{
                  subtract: [
                     { required: true, message: '请输入摘要', trigger: 'blur' },
-                    { min: 3, max: 100, message: '长度在 3 到 100 个字符', trigger: 'blur' }
+                    { min: 3, max: 128, message: '长度在 3 到 128 个字符', trigger: 'blur' }
                 ],
                  title: [
                     { required: true, message: '请输入标题', trigger: 'blur' },
-                    { min: 1, max: 30, message: '长度在 1 到 30 个字符', trigger: 'blur' }
+                    { min: 1, max: 128, message: '长度在 1 到 128 个字符', trigger: 'blur' }
                 ],
             },
             editor:null,
